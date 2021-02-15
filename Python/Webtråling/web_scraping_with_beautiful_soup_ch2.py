@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 17 15:10:52 2020
+
+@author: bwarland
+"""
+
+from urllib.request import urlopen
+from urllib.error   import HTTPError
+from bs4            import BeautifulSoup
+
+import re
+
+war_and_peace="http://www.pythonscraping.com/pages/warandpeace.html"
+war_and_peace_page=urlopen(war_and_peace)
+tolstoy=BeautifulSoup(war_and_peace_page,"html")
+
+nameList=tolstoy.findAll("span",{"class":"green"})
+
+for name in nameList:
+    print(name)
+
+statList=tolstoy.findAll("span",{"class":"red"})
+
+for statement in statList:
+    print(statement)
+
+nameList2=tolstoy.findAll(recursive=True,text="the prince",limit=5)
+print(len(nameList2))
+
