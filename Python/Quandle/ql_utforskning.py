@@ -15,8 +15,8 @@ ql.ApiConfig.api_key="aRr-8SCxC3K-BQz89yar"
 #            returns="pandas",
 #            transformation="rdiff")
 
-macro_YE=ql.get("UNAE/GVAKD_YEM", returns="pandas")
-macro_NO=ql.get("UNAE/GVAKD_NOR", returns="pandas")
-macro_SE=ql.get("UNAE/GVAKD_SWE", returns="pandas")
+mYE=ql.get("UNAE/GVAKD_YEM", returns="pandas")
+mNO=ql.get("UNAE/GVAKD_NOR", returns="pandas")
+mSE=ql.get("UNAE/GVAKD_SWE", returns="pandas")
 # https://www.iban.com/country-codes
 
