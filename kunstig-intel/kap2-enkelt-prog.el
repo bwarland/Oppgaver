@@ -80,10 +80,44 @@
 
 (defparameter *simple-grammar*
   '((sentence -> (noun-phrase verb-phrase))
-    (noun-phrase -> (article noun))
-    (verb-phrase -> (verb noun-phrase))
-    (article -> the a)
-    (noun -> man ball woman table)
-    (verb -> hit took saw liked)))
+    (noun-phrase -> (Article Noun))
+    (verb-phrase -> (Verb noun-phrase))
+    (Article -> the a)
+    (Noun -> man ball woman table)
+    (Verb -> hit took saw liked))
+  "A grammar for a trivial subset of English.")
 
-(defvar *grammar* *simple-grammar*)
+(defvar *grammar* *simple-grammar*
+  "The grammar used by generate.  Initially, this is
+  *simple-grammar*, but we can switch to other grammers.")
+
+;;; ==============================
+
+;;; Define how to manipulate this data
+;;; Accessors for the Knowledge base.
+
+(defun rule-lhs (rule)
+  "The left hand side of a rule."
+  (first rule))
+
+(defun rule-rhs (rule)
+  "The right hand side of a rule."
+  (rest (rest rule)))
+
+(defun rewrites (category)
+  "Return a list of the possible rewrites for this category."
+  (rule-rhs (assoc category *grammar*)))
+
+
+;;; ==============================
+;;; Use the knowledge base to solve the problem:
+;;; 
+
+;;; That's all it takes!
+(defun generate (phrase)
+  "Generate a random sentence or phrase"
+  (cond ((listp phrase)
+         (mappend #'generate phrase))
+        ((rewrites phrase)
+         (generate (random-elt (rewrites phrase))))
+        (t (list phrase))))
