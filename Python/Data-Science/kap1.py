@@ -21,7 +21,6 @@ from collections import defaultdict, Counter
 lookup=defaultdict(int)
 my_counter=Counter()
 
-
 # Normalen i Python er slik at man introduserer en funksjonsdefinisjon med nøkkelordet def, men
 # man har også muligheten til å gjøre dette med en variabeldeklarasjon som bruker en lambda-funksjon
 # som vist nedenfor:
@@ -53,6 +52,11 @@ familie=[["Theo","Warland"],
 for fornavn,etternavn in familie:
     print(f"{fornavn} {etternavn}")
 
+# Denne her skriver ut alle elementene i listen, det vil si en ny liste med
+# fornavn og etternavn
+    
+for navn in familie:
+    print(navn)
 
     
 tall=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
