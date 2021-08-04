@@ -1,0 +1,39 @@
+# kapitell 9
+
+fin=open('words.txt')
+
+def read_word(document):
+    line=document.readline()
+    word=line.strip()
+    print(word)
+
+# hvor mange ord i det engelske språk har mer enn 20 bokstaver?
+# for word in fin:
+#     if len(word)>20:
+#         print(word)
+#     else:
+#         pass
+
+# has_no_e: string -> boolean
+# takes a string en determines if the string has a letter "e" in it
+
+def has_no_e(word):
+    num_letters=len(word)
+    for index in range(0,num_letters):
+        if word[index]=="e":
+            return False
+        else:
+            return True
+
+# assert has_no_e('abc')==True
+# assert has_no_e('edf')==False
+
+# lines_in_doc: document -> integer
+# counts the number of lines (words in this case) in a document
+
+def lines_in_doc(document):
+    counter=0
+    for lines in document:
+        counter+=1
+    return counter
+    

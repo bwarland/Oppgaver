@@ -1,0 +1,2 @@
+* kapitell 2: et enkelt lisp-programm
+Hva er de viktige konseptene i dette kapitellet?

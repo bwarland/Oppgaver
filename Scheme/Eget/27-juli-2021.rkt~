@@ -1,0 +1,5 @@
+
+(define (tallreduksjon1 nummer)
+  (+ (quotient nummer 10)
+     (* 10 (remainder nummer 10))))
+

@@ -1,0 +1,37 @@
+#+title: Dybvig sin bok "The Scheme Programming Language"
+
+* Kapitell 2.8 omhandler Scheme og rekursjon. Rekursjon er når en prossess påkaller seg selv fra det
+indre i prossessen selv. Med dette elegante grepet så kan man uttrykke alle former for prossessløkker
+som man i andre språk vil måtte trenge ulike while- og for-løkker for. 
+
+Fra modul som omhandliger såkalt debugging: https://docs.racket-lang.org/reference/debugging.html
+Dybvig sin bok bruker Chez Scheme og dette språket har funksjonen trace. Dennefunksjon finnes 
+derimot ikke i basisspråket til Racket
+
+#+begin_src racket
+#lang racket
+(require racket/trace)
+
+(define (fact num)
+  (if (= num 0) 1
+      (* num (fact (- num 1)))))
+
+
+(define list-length (lambda (x)
+                      (if (empty? x) 0
+                          (+ 1 (list-length (cdr x))))))
+
+;; (define (list-fold operation alist)
+;;   (cond
+;;     [(empty? alist) empty]
+;;     [else (operation (first alist) (list-fold operation (rest alist)))]))
+
+(trace fact)
+(trace list-length)
+;; (trace list-fold)
+#+end_src
+
+
+
+
+

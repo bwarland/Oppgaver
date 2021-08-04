@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+import keyword
+import matplotlib.pyplot as plt
+# import seaborn as sb
 
 songs2=pd.Series([145,142,38,13],name="counts")
 songs3=pd.Series([145,142,38,13],name='counts',index=['Paul','John','George','Ringo'])
@@ -57,17 +60,55 @@ nett2=george>7
 nett3=george<22
 nett4=george>22
 
-songs_66=pd.Series([3,None,11,9],
-                   index=['George','Ringo','John','Paul'],
-                   name='Counts')
+# songs_66=pd.Series([3,None,11,9],
+#                    index=['George','Ringo','John','Paul'],
+#                    name='Counts')
 
-songs_69=pd.Series([18,22,7,5],
-                   index=['John','Paul','George','Ringo'],
-                   name='Counts')
+# songs_69=pd.Series([18,22,7,5],
+#                    index=['John','Paul','George','Ringo'],
+#                    name='Counts')
 
 # for idx, value in songs_66.iteritems(): print(idx,value)
 # for idx in songs_66.keys(): print(idx)
 # songs_66+songs_69
 # songs_66.fillna(0)+songs_69.fillna(0)
 
+navn=pd.Series(['George','John','Paul'])
+# navn.str.lower()
+# navn.str.findall('o')
 
+def liten_skrift(val):
+    return val.lower()
+
+# navn.apply(liten_skrift)
+
+s66=pd.Series([5.0,7.0,18.0,22.0],
+              index=['Ringo','George','John','Paul'],
+              name='c66')
+
+s69=pd.Series([22.0,18.0,7.0,5.0],
+              index=['John','Paul','George','Ringo'],
+              name='c69')
+
+# fig=plt.figure()
+# s69.plot()
+# s66.plot()
+# s66.plot(kind='bar')
+# s69.plot(kind='bar')
+
+plt.legend()
+# fig.savefig('/home/bwarland/GitHub/Oppgaver/Python/Pandas/.ex1.png')
+# fig.savefig('/home/bwarland/GitHub/Oppgaver/Python/Pandas/.ex2.png')
+
+data=pd.Series(np.random.randn(500),
+               name='500 random')
+
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# data.hist()
+fig.savefig('/home/bwarland/GitHub/Oppgaver/Python/Pandas/.ex3.png')
+
+# fig=plt.figure()
+# data.plot(kind='kde')
+
+# fig.savefig('/home/bwarland/GitHub/Oppgaver/Python/Pandas/.ex4.png')
