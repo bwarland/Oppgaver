@@ -43,8 +43,8 @@ def has_no_e(w):
             return False
     return True
 
-# assert has_no_e('abc')==True
-# assert has_no_e('dedf')==False
+assert has_no_e('abc')==True
+assert has_no_e('dedf')==False
 
 
 # lines_in_doc: document -> integer
