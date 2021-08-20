@@ -1,4 +1,6 @@
 # kapitell 9
+import itertools
+
 
 fin=open('words.txt')
 
@@ -25,6 +27,10 @@ def read_word(document):
 # | | OPPGAVE 9-2: hvor mange ord i engelsk bruker ikke bokstaven "e"
 # | `----
 # `----
+
+# 1) funksjon: har et ord "e" i seg eller ikke?
+# 2) skriv ut alle ord som ikke har "e" i seg
+# 3) hvor stor andel av engelske ord har ikke "e" i seg?
 
 # l_in_word: string -> *string
 # prints letters in a word
@@ -97,6 +103,9 @@ def words_wo_e(document):
 # | `----
 # `----
 
+# 1) en funksjon som tar et org og en streng med bokstaver og vurderer om ordet har alle bokstavene i seg
+# 2) en funksjon som tar en streng med bokstaver og skriver ut antallet ord som ikke har disse bokstavene i seg
+# 3) hvilken kombinasjon av fem bokstaver eksluderer færrest ord
 
 # has_no_lettter: str str -> boolean
 # checks if a letter can be found in word
@@ -146,6 +155,9 @@ def include(L,W):
 # | `----
 # `----
 
+# 1) funksjon: bruker et ord kun oppgitte bokstaver (streng)?
+# 2) setning med bokstavene acefhlo?
+
 # includes: str str -> boolean
 # checks if word includes given letters
 
@@ -172,6 +184,9 @@ def includes(L,W):
 # | `----
 # `----
 
+# 1) funksjon: bruker et ord alle gitte bokstaver minst en gang?
+# 2) hvilket ord bruker alle bokstavene aeiou?
+# 3) er det noen ord som bruker alle bokstavene aeiouy?
 
 # ,----
 # | ,----
@@ -179,5 +194,33 @@ def includes(L,W):
 # | `----
 # `----
 
+alfabet='abcdefghijklmnopqrstuvwzxy'
+betalfa=alfabet[::-1]
 
+# abc_p: string -> boolean
+# vurderer om alle bokstaver i et ord kommer i alfabetisk rekkefølge 
 
+# def abc_p(et_ord):
+#     for i in range(len(et_ord)):
+#         for j in range(i+1,len(et_ord)):
+#             if not et_ord[i]<et_ord[j]:
+#                 return False
+#             else:
+#                 return True
+
+def abc_p(et_ord):
+    for i in range(len(et_ord)):
+        et_ord[i]<et_ord[i+1]
+
+# dette går ikke! ikke logisk da i+1 alltid vil ende utenfor range
+            
+            
+# funksjon som tar funksjon og dokument og gir tilbake et tall 
+
+# teller=0
+# for word in fin:
+#     if abc_p(word)==True:
+#         teller+=1
+#     else:
+#         pass
+    
