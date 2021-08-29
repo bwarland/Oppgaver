@@ -1,0 +1,19 @@
+#+title: Think Python, Think Computer Science
+* Innhold
+Utvalge oppgaver i fra boken "Think Python, Think Computer Science".
+* Kapitell 9
+** programmerings- og Python-konsepter
+- trening i bruk av for-løkker
+- trening i strengutvalg/slicing
+- bruk av zip-funksjon
+- operator overloading ifb. sammenligning av bokstaver
+- bruk av lister
+- bruk av "break"
+** Hvilke ord bruker ikke bokstaven "e"?
+
+#+begin_src python
+
+#+end_src
+** Ord med gitte bokstaver i seg?
+** Bruker et ord alle bokstaver?
+** Kommer ord i alfabetisk rekkefølge?

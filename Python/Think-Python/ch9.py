@@ -1,6 +1,5 @@
 # kapitell 9
-import itertools
-
+# import itertools
 
 fin=open('words.txt')
 
@@ -12,8 +11,17 @@ fin=open('words.txt')
 def read_word(document):
     line=document.readline()
     word=line.strip()
-    print(word)
-    
+    return word
+
+# ,----
+# | ordliste
+# `----
+
+# ordliste=[]
+
+# for word in fin:
+#     ordliste.append(word.strip())
+
 # hvor mange ord i det engelske språk har mer enn 20 bokstaver?
 # for word in fin:
 #     if len(word)>20:
@@ -61,8 +69,8 @@ def has_no_e(w):
             return False
     return True
 
-assert has_no_e('abc')==True
-assert has_no_e('dedf')==False
+# assert has_no_e('abc')==True
+# assert has_no_e('dedf')==False
 
 
 # lines_in_doc: document -> integer
@@ -103,9 +111,11 @@ def words_wo_e(document):
 # | `----
 # `----
 
-# 1) en funksjon som tar et org og en streng med bokstaver og vurderer om ordet har alle bokstavene i seg
+# 1) en funksjon som tar et ord og en streng med bokstaver og vurderer om ordet har alle bokstavene i seg
+
 # 2) en funksjon som tar en streng med bokstaver og skriver ut antallet ord som ikke har disse bokstavene i seg
-# 3) hvilken kombinasjon av fem bokstaver eksluderer færrest ord
+
+# 3) hvilken kombinasjon av fem bokstaver ekskluderer færrest ord
 
 # has_no_lettter: str str -> boolean
 # checks if a letter can be found in word
@@ -185,7 +195,12 @@ def includes(L,W):
 # `----
 
 # 1) funksjon: bruker et ord alle gitte bokstaver minst en gang?
+
+def all_letters(word,letters):
+    
+
 # 2) hvilket ord bruker alle bokstavene aeiou?
+
 # 3) er det noen ord som bruker alle bokstavene aeiouy?
 
 # ,----
@@ -194,33 +209,49 @@ def includes(L,W):
 # | `----
 # `----
 
-alfabet='abcdefghijklmnopqrstuvwzxy'
+alfabet='abcdefghijklmnopqrstuvwxyz'
 betalfa=alfabet[::-1]
 
 # abc_p: string -> boolean
 # vurderer om alle bokstaver i et ord kommer i alfabetisk rekkefølge 
 
-# def abc_p(et_ord):
-#     for i in range(len(et_ord)):
-#         for j in range(i+1,len(et_ord)):
-#             if not et_ord[i]<et_ord[j]:
-#                 return False
-#             else:
-#                 return True
+
+# https://www.quora.com/How-do-I-iterate-through-a-list-in-python-while-comparing-the-values-at-adjacent-indices
+# https://python-forum.io/thread-14284.html
 
 def abc_p(et_ord):
-    for i in range(len(et_ord)):
-        et_ord[i]<et_ord[i+1]
+    liten_b=et_ord.lower()
+    sannhetsliste=[]
+    for i,j in zip(liten_b[::],liten_b[1::]):
+        sannhetsliste.append(i<=j)
+    for verdi in sannhetsliste:
+        # return True
+        if verdi==False:
+            break
+    else:
+        return True
+    return False
+     
+# assert abc_p(alfabet)==True
+# assert abc_p('Abc')==True
+# assert abc_p(betalfa)==False
+# assert abc_p('abcabc')==False
 
-# dette går ikke! ikke logisk da i+1 alltid vil ende utenfor range
-            
-            
-# funksjon som tar funksjon og dokument og gir tilbake et tall 
+# ,----
+# | word_in_english: document + function_p -> integer
+# `----
+# takes a document and a function (predicate) and returns a number
 
-# teller=0
-# for word in fin:
-#     if abc_p(word)==True:
-#         teller+=1
-#     else:
-#         pass
+def word_in_english(document,function_p):
+    teller=0
+    for word in document:
+        clean=word.strip() # strip tar vekk linjeskift
+        if function_p(clean) is True:
+            teller+=1
+        else:
+            pass
+    return teller
+
+# assert word_in_english(fin,abc_p)==596
+
     
