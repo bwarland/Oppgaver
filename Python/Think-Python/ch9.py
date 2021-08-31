@@ -1,5 +1,4 @@
-# kapitell 9
-# import itertools
+# Kapitell 9: Spill Med Ord
 
 fin=open('words.txt')
 
@@ -22,13 +21,24 @@ def read_word(document):
 # for word in fin:
 #     ordliste.append(word.strip())
 
-# hvor mange ord i det engelske språk har mer enn 20 bokstaver?
+# ord i det engelske språk som har mer enn 20 bokstaver?
+
 # for word in fin:
 #     if len(word)>20:
 #         print(word)
 #     else:
 #         pass
 
+# Men hvordan vil en funksjon se ut?
+
+# letters_over_N: doc N -> string
+
+def letters_over_N(document,N):
+    for word in document:
+        if len(word)>N:
+            print(word)
+        else:
+            pass
 
 # ,----
 # | ,----
@@ -182,12 +192,6 @@ def includes(L,W):
 # assert includes('aw','abcd')==False
 # assert includes('zyz','abcdefghij')==False
 
-# for word in fin:
-#     if includes('aeiou',word)==True:
-#         print(word)
-#     else:
-#         pass
-
 # ,----
 # | ,----
 # | | OPPGAVE 9-5: bruker et ord alle bokstaver?
@@ -195,13 +199,25 @@ def includes(L,W):
 # `----
 
 # 1) funksjon: bruker et ord alle gitte bokstaver minst en gang?
-
-def all_letters(word,letters):
+# 
+# def all_letters(word,letters):
     
 
 # 2) hvilket ord bruker alle bokstavene aeiou?
 
+# for word in fin:
+#     if includes('aeiou',word)==True:
+#         print(word)
+#     else:
+#         pass
+
 # 3) er det noen ord som bruker alle bokstavene aeiouy?
+
+# for word in fin:
+#     if includes('aeiouy',word)==True:
+#         print(word)
+#     else:
+#         pass
 
 # ,----
 # | ,----
@@ -209,8 +225,8 @@ def all_letters(word,letters):
 # | `----
 # `----
 
-alfabet='abcdefghijklmnopqrstuvwxyz'
-betalfa=alfabet[::-1]
+# alfabet='abcdefghijklmnopqrstuvwxyz'
+# betalfa=alfabet[::-1]
 
 # abc_p: string -> boolean
 # vurderer om alle bokstaver i et ord kommer i alfabetisk rekkefølge 
@@ -242,16 +258,44 @@ def abc_p(et_ord):
 # `----
 # takes a document and a function (predicate) and returns a number
 
-def word_in_english(document,function_p):
-    teller=0
-    for word in document:
-        clean=word.strip() # strip tar vekk linjeskift
-        if function_p(clean) is True:
-            teller+=1
-        else:
-            pass
-    return teller
+# def word_in_english(document,function_p):
+#     teller=0
+#     for word in document:
+#         clean=word.strip() # strip tar vekk linjeskift
+#         if function_p(clean) is True:
+#             teller+=1
+#         else:
+#             pass
+#     return teller
 
 # assert word_in_english(fin,abc_p)==596
 
     
+# ,----
+# | ,----
+# | | oppgave 9.7: ord med tre dobble bokstaver på rad
+# | `----
+# `----
+# committee eller Mississippi kunne nesten vært eksempler
+
+
+
+# ,----
+# | ,----
+# | | oppgave 9.8: palindromiske tall
+# | `----
+# `----
+
+
+
+# ,----
+# | ,----
+# | | oppgave 9.9: dobbling av tall og reversering av tall
+# | `----
+# `----
+
+
+
+
+
+
