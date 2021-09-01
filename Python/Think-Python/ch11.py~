@@ -1,0 +1,14 @@
+# dictionaries
+
+# ,----
+# | histogram: string -> dictionary
+# `----
+
+def histogram(string):
+    dictionary={}
+    for letter in string:
+        if letter not in d:
+            dictionary[letter]=1
+        else:
+            d[c]+=1
+    return dictionary

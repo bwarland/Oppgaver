@@ -1,4 +1,4 @@
-import string
+# import string
 
 # print(string.ascii_letters)
 # print(string.ascii_lowercase)
@@ -8,4 +8,4 @@ import string
 # print(string.octdigits)
 # print(string.punctuation)
 # print(string.printable)
-print(string.whitespace)
+# print(string.whitespace)

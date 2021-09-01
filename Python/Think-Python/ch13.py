@@ -1,5 +1,12 @@
 # kapitell 13: case study - valg av datastruktur
 import string
+import os
+
+villanden=open('henrik_ibsen_villanden.txt','r')
+sult=open('knut_hamsun_sult.txt','r')
+
+# villanden.close()
+# sult.close()
 
 # ,----
 # | ,----
