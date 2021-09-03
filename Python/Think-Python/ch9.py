@@ -247,7 +247,9 @@ def abc_p(et_ord):
     else:
         return True
     return False
-     
+
+
+
 # assert abc_p(alfabet)==True
 # assert abc_p('Abc')==True
 # assert abc_p(betalfa)==False

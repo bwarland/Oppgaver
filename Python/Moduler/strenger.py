@@ -29,3 +29,9 @@ abra="abra cadabra"
 # print(formatter.format('{website}',website='JournalDev'))
 # print(formatter.format('{} {website}','Welcome to',website='JournalDev'))
 # print('{} {website}'.format('Welcome to',website='JournalDev'))
+
+# print(abra.count('a')) # => 5
+print(abra[::-1])
+print(abra[::])
+print(abra[1::])
+zip_test=zip(abra[::],abra[1::])
