@@ -284,6 +284,7 @@ def abc_p(et_ord):
 # `----
 # committee eller Mississippi kunne nesten vært eksempler
 # zip-funksjonen fra 9.6 kan her faktisk være ganske nyttig
+# bookkeeping+
 
 # 1) har et ord dobble bokstaver i seg?
 
@@ -301,13 +302,33 @@ def double_letter_p(word):
             return True
     return False
 
-
-# assert double_letter_p('Mississippi')==True
+assert double_letter_p('Mississippi')==True
+assert double_letter_p('abc')==False
         
 # 2) hvor mange dobble bokstaver har et ord?
 
-# def number_doubble_letter(word):
-    
+def num_double_l(word):
+    liten_b=word.lower()
+    bokstavpar=[]
+    teller=0
+    for en, to in zip(liten_b[::],liten_b[1::]):
+        bokstavpar.append([en,to])
+    for i,j in bokstavpar:
+        if i==j:
+            teller+=1
+        else:
+            pass
+    return teller
+
+assert num_double_l('Mississippi')==3
+assert num_double_l('abc')==0
+
+# for word in fin:
+#     if num_double_l(word)>=3:
+#         print(word)
+#     else:
+#         pass
+
 # 3) har et ord tre dobble bokstaver?
 
 # def doubble_letter_3(word):
