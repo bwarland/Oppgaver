@@ -194,14 +194,18 @@ def includes(L,W):
 
 # ,----
 # | ,----
-# | | OPPGAVE 9-5: bruker et ord alle bokstaver?
+# | | OPPGAVE 9-5: bruker et ord alle bokstaver?q
 # | `----
 # `----
 
 # 1) funksjon: bruker et ord alle gitte bokstaver minst en gang?
 # 
-# def all_letters(word,letters):
-    
+def doc_all_letters(doc,letters):
+    for word in doc:
+        if includes(letters,word)==True:
+            print(word)
+        else:
+            pass
 
 # 2) hvilket ord bruker alle bokstavene aeiou?
 
@@ -210,6 +214,8 @@ def includes(L,W):
 #         print(word)
 #     else:
 #         pass
+
+
 
 # 3) er det noen ord som bruker alle bokstavene aeiouy?
 
@@ -248,8 +254,6 @@ def abc_p(et_ord):
         return True
     return False
 
-
-
 # assert abc_p(alfabet)==True
 # assert abc_p('Abc')==True
 # assert abc_p(betalfa)==False
@@ -279,9 +283,35 @@ def abc_p(et_ord):
 # | `----
 # `----
 # committee eller Mississippi kunne nesten vært eksempler
+# zip-funksjonen fra 9.6 kan her faktisk være ganske nyttig
+
+# 1) har et ord dobble bokstaver i seg?
+
+def double_letter_p(word):
+    liten_b=word.lower()
+    bokstavpar=[]
+    for en, to in zip(liten_b[::],liten_b[1::]):
+        bokstavpar.append([en,to])
+    #     print(element)
+    for en,to in bokstavpar:
+    #     print(i,j)
+        if en!=to:
+            pass
+        else:
+            return True
+    return False
 
 
+# assert double_letter_p('Mississippi')==True
+        
+# 2) hvor mange dobble bokstaver har et ord?
 
+# def number_doubble_letter(word):
+    
+# 3) har et ord tre dobble bokstaver?
+
+# def doubble_letter_3(word):
+    
 # ,----
 # | ,----
 # | | oppgave 9.8: palindromiske tall

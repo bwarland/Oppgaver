@@ -1,15 +1,48 @@
 #+title: Think Python, Think Computer Science
 * Innhold
 Utvalge oppgaver i fra boken "Think Python, Think Computer Science".
-* Kapitell 9
-** programmerings- og Python-konsepter
+* [0/21] Kapitler og oppgaver 
+1) [ ] Hva er et progralm 
+2) [ ] Variabler og uttrykk
+3) [ ] Funksjoner
+4) [ ] Case Study: utforming av grensesnitt
+5) [ ] Betingelsesstrukturer
+6) [ ] Nyttige funksjoner
+7) [ ] Gjentagelse
+8) [ ] Strenger
+9) [-] [6/9] Case Study: Strings 
+   1) [X] finn ord over 20 bokstaver og skriv ut
+   2) [X] hvor mange ord i engelsk bruker ikke bokstaven "e"
+   3) [X] har et ord gitte bokstaver i seg?
+   4) [X] hvilke ord har gitt sett med bokstaver
+   5) [X] bruker et ord alle bokstaver?
+   6) [X] kommer alle bokstaver i et ord i alfabetisk rekkefølge?
+   7) [ ] ord med tre dobble bokstaver på rad
+   8) [ ] palindromiske tall
+   9) [ ] dobbling av tall og reversering av tall
+10) [ ] [0/4] Lister
+    1) [ ] 
+    2) [ ] 
+    3) [ ] 
+    4) [ ] 
+11) [ ] Nøkkelpar (dictionaries)
+12) [ ] Faste rekker
+13) [ ] Case Study: valg av datastruktur
+14) [ ] Filer og dokumenter
+15) [ ] Klasser og objekter
+16) [ ] Klasser og funksjoner
+17) [ ] Klasser og metoder
+18) [ ] Arv (inheritance)
+19) [ ] Python-godsaker
+20) [ ] Feilsøking
+21) [ ] Analyse av algoritmer
+* programmerings- og Python-konsepter
 - trening i bruk av for-løkker
 - trening i strengutvalg/slicing
 - bruk av zip-funksjon
 - operator overloading ifb. sammenligning av bokstaver
 - bruk av lister
 - bruk av "break"
-** Hvilke ord bruker ikke bokstaven "e"?
 
 #+begin_src python
 # l_in_word: str -> str*
@@ -28,6 +61,5 @@ def has_no_e(word):
         else:
             return True
 #+end_src
-** Ord med gitte bokstaver i seg?
-** Bruker et ord alle bokstaver?
-** Kommer ord i alfabetisk rekkefølge?
+
+* Konsepter
