@@ -26,10 +26,11 @@ my_counter=Counter()
 # som vist nedenfor:
 
 double=lambda x: 2*x
+square=lambda x: x**2
 
 # Dette tror jeg viser en grei måte å dokumentere i koden på:
 
-def navn(første="fornavn",andre="etternavn"):
+def navn(første,andre):
     return første+" "+andre
 
 fornavn="Theo"
@@ -55,8 +56,8 @@ for fornavn,etternavn in familie:
 # Denne her skriver ut alle elementene i listen, det vil si en ny liste med
 # fornavn og etternavn
     
-for navn in familie:
-    print(navn)
+# for navn in familie:
+#     print(navn)
 
     
 tall=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]

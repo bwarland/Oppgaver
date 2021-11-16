@@ -1,0 +1,4 @@
+# Testing og utprøving av modulen PyPDF2
+
+import os
+import pypdf2
