@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+
+Kapitell 4 fra "Data Science From Scratch"
+
+"""
+from typing import List
+
+Vector=List[float]
+height_weight_average=[70,  # inches,
+                       170, # pounds
+                       40]  # years
+
+grades=[95, # exam1
+        80, # exam2
+        75, # exam3
+        62  # exam4
+        ]
+
+def add(v: Vector, w: Vector) -> Vector:
+    """ adds corresponding elements """
+    assert len(v)==len(w), "vectors must be the same length"
+    return [v_i + w_i for v_i, w_i in zip(v,w)]
+
+assert add([1,2,3],[4,5,6])==[5,7,9]
+
+def subtract(v: Vector, w: Vector) -> Vector:
+    """ subracts corresponding elements """
+    assert len(v)==len(w), "vectors must be the same length"
+    return [v_i - w_i for v_i, w_i in zip(v,w)]
+
+assert subtract([5,7,9],[4,5,6])==[1,2,3]
+
+def vector_sum(vectors: List[Vector]) -> Vector:
+    """ Sums all corresponding elements """
+    assert vectors, "no vectors provided"
+    num_elements=len(vectors[0])
+    assert all(len(v)==num_elements for v in vectors), "different sizes!"
+    return [sum(vector[i] for vector in vectors) for i in range(num_elements)]
+  
+assert vector_sum([[1,2],[3,4],[5,6],[7,8]])==[16,20]
