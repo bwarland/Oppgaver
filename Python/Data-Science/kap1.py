@@ -20,6 +20,10 @@ users=[
     {"id":8, "name":"Kate"},
     {"id":9, "name":"Klein"}]
 
+# En liste med dictionaries, en dictionary for hver bruker. Er dette en vanlig
+# måte å modere data på i Python? Samlet sett har ingen av såkalte dictionaries
+# en unik identifikator, men hver dictionary blir identifisert av sin plass i listen.
+
 friendship_pairs=[(0,1),
                   (0,2),
                   (1,2),
@@ -32,6 +36,14 @@ friendship_pairs=[(0,1),
                   (6,8),
                   (7,8),
                   (8,9)]
+
+# Dette er en liste med såkalte tuples, også en sammensatt datastruktur. Er også dette
+# vanlig. Og hva er det i så fall som gjør denne til en bedre datastruktur enn en
+# liste i en liste?
+
+# Dette er et innledende kapitell, og hva ønsker forfatteren å få frem med dette?
+# Kunne han ikke unngått å komme med så mye sammensatt informasjon ved å bruke en
+# enklere datastruktur?
 
 # lager en parliste med id og tomme lister
 friendships={user["id"]:[] for user in users} 
@@ -46,6 +58,15 @@ for i, j in friendship_pairs:
 #                [4,5,6],
 #                [7,8,9]]
 
+def friends(user):
+    user_id=user["id"]
+    friend_ids=friendships[user_id]
+    return len(friend_ids)
+
+total_connections=sum(friends(user) for user in users)
+number_users=len(users)
+average_connections=total_connections/number_users
+
 import re
 my_regex=re.compile("[0-9]+",re.I)
 
@@ -55,12 +76,15 @@ from collections import defaultdict, Counter
 lookup=defaultdict(int)
 my_counter=Counter()
 
+
+
 # Normalen i Python er slik at man introduserer en funksjonsdefinisjon med nøkkelordet def, men
 # man har også muligheten til å gjøre dette med en variabeldeklarasjon som bruker en lambda-funksjon
 # som vist nedenfor:
 
 double=lambda x: 2*x
 square=lambda x: x**2
+sqrt=lambda x: x**(1/2)
 
 # Dette tror jeg viser en grei måte å dokumentere i koden på:
 
