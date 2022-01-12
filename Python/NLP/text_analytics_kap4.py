@@ -26,3 +26,6 @@ corpus=np.array(corpus)
 corpus_df=pd.DataFrame({'Document':corpus,'Category':labels})
 
 corpus_df=corpus_df[['Document','Category']]
+
+wpt=nltk.WordPunctTokenizer()
+stop_words=nltk.corpus.stopwords.words('english')

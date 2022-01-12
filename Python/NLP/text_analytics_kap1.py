@@ -12,8 +12,8 @@ import pandas as pd
 
 # nlp=en_core_web_sm.load()
 
-# from spacy.lang.en import English
-# nlp=English()
+from spacy.lang.en import English
+nlp=English()
 
 
 S1="The brown fox is quick and he is jumping over the lazy dog"
