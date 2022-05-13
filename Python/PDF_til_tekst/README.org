@@ -1,0 +1,12 @@
+* beskrivelse/mål
+Modul med funksjonalitet for det å lage tekstfiler av pdf-filer. Denne bør være så generell at man kan kjøre den mot en mappe med mange pdf-filer, derav mange allerede vil ha en korresponderende tekstfil.
+
+Navn på fil må ha en referanse til år, måned og dag, i.e. publiseringsdato, og til type rapport.
+
+Ideelt sett så hadde det vært bra om man kunne angi fra hvilken mappe man skal hente pdf-filer, og til hvilken mappe man kopierer tekstfiler, og det hadde vært supert om man kunne angitt den generelle "markedsrapport"-mappen og referert til hvilken rapport man ønsket å konvertere til tekst (skjønt dette siste er jeg ikke helt sikker på om det er verdt å bruke mye tid på). 
+* prossessteg
+1) sjekk om tekstfil allerede eksisterer
+2) lag navn til tekstfil
+3) lag tekstfil og knytt til navn
+4) trekk ut tekst fra pdf
+5) legg tekst i tekstfil
