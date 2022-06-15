@@ -3,6 +3,9 @@
 #reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname kap21) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;abstraksjoner fra eksempler
 
+
+
+
 ;build-list: N (N->X) -> (listof X)
 ;filter: (X->boolean) (listof X) ->(listof X)
 ;quick-sort: (X X -> boolean) (listof X) (listof X)
@@ -12,3 +15,17 @@
 ;foldr: (X Y -> Y) (listof X) -> Y
 ;foldl: (X Y -> Y) Y (listof X) -> Y
 ;assf: (X->boolean) (listof (list X Y))->(list X Y) or false
+
+;; fold
+
+(define (fold func alon)
+  (local ((define (list-stop func)
+            (cond
+              [(equal? func +) 0]
+              [(equal? func *) 1]
+              [else empty])))
+    (cond
+      [(empty? alon) (list-stop func)]
+      [else (func (first alon)
+                  (fold func (rest alon)))])))
+             
