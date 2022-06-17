@@ -16,6 +16,22 @@
 ;foldl: (X Y -> Y) Y (listof X) -> Y
 ;assf: (X->boolean) (listof (list X Y))->(list X Y) or false
 
+;; flatten-list: (listof (listof X)) -> (listof X)
+
+(define (flatten-list alon)
+  (cond
+    [(empty? alon) empty]
+    [(not (list? (first alon))) (cons (first alon)
+                                      (flatten-list (rest alon)))]
+    [else (append (cons (first (first alon))
+                        (flatten-list (rest (first alon))))
+                  (flatten-list (rest alon)))]))
+
+;(equal? (flatten-list empty) empty)
+;(equal? (flatten-list '(1 2 3 4)) '(1 2 3 4))
+;(equal? (flatten-list '((1 2 3) (4 5 6))) '(1 2 3 4 5 6))
+(equal? (flatten-list '((1 2 3) (4 5) 6)) '(1 2 3 4 5 6))
+
 ;; fold
 
 (define (fold func alon)
@@ -24,8 +40,18 @@
               [(equal? func +) 0]
               [(equal? func *) 1]
               [else empty])))
+        
     (cond
       [(empty? alon) (list-stop func)]
+      ; denne fungerer, men det er noe lite
+      ; tilfredstillende med denne løsningen
+      [(list? (first alon)) (flatten-list alon)]
+      ;=========================================
       [else (func (first alon)
                   (fold func (rest alon)))])))
+
+(equal? (fold * '(1 2 3 4)) 24)
+(equal? (fold + '(1 2 3 4)) 10)
+(equal? (fold cons '(1 2 3 4)) (list 1 2 3 4))
+(equal? (fold cons '((1 2 3) (4 5 6))) '(1 2 3 4 5 6))
              
