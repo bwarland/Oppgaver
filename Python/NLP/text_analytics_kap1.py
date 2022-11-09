@@ -1,6 +1,7 @@
 # kapitell en fra TEXT ANALYTICS WITH PYTHON
 
 import nltk
+nltk.download('averaged_perceptron_tagger')
 import spacy
 import numpy as np
 import pandas as pd
@@ -17,16 +18,21 @@ nlp=English()
 
 
 S1="The brown fox is quick and he is jumping over the lazy dog"
+S2="The quick brown fox jumps over the lazy dog"
 
-words=S1.split()
+W1=S1.split()
+W2=S2.split()
 
-pos_tags=nltk.pos_tag(S1.split())
+pos_tags1=nltk.pos_tag(S1.split())
+pos_tags2=nltk.pos_tag(S2.split())
 
-DR1=pd.DataFrame(pos_tags).T
+DR1=pd.DataFrame(pos_tags1).T
+
+DR2=pd.DataFrame(pos_tags2).T
 
 spacy_pos_tagged=[(word,word.tag_,word.pos_) for word in nlp(S1)]
 
-DR2=pd.DataFrame(spacy_pos_tagged).T
+DR3=pd.DataFrame(spacy_pos_tagged).T
 
 grammar='''
         NP:{<DT>?<JJ>?<NN.*>}
