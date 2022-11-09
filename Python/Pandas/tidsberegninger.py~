@@ -1,0 +1,16 @@
+# fra youtube
+
+import pandas as pd
+
+ufo = pd.read_csv('http://bit.ly/uforeports')
+
+# ufo.head()
+
+# ufo.dtypes
+
+# ufo.Time.str.slice(-5,-3)
+
+
+
+
+
