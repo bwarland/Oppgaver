@@ -13,6 +13,8 @@ import pandas as pd
 
 # nlp=en_core_web_sm.load()
 
+# Denne ser ut til å løse med det problemet at en_core_web_sm ikke laster
+# men jeg husker dessverre ikke hvor jeg fant denne løsningen
 from spacy.lang.en import English
 nlp=English()
 
