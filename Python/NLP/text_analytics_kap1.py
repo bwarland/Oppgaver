@@ -5,18 +5,22 @@ nltk.download('averaged_perceptron_tagger')
 import spacy
 import numpy as np
 import pandas as pd
+
+
+
 # import en_core_web_sm
+
 
 # hva gjør dette (ser ut til å virke)
 # import spacy.cli
-# spacy.cli.download('en_core_web_sm')
+spacy.cli.download('en_core_web_trf')
 
-# nlp=en_core_web_sm.load()
+nlp=en_core_web_trf.load()
 
 # Denne ser ut til å løse med det problemet at en_core_web_sm ikke laster
 # men jeg husker dessverre ikke hvor jeg fant denne løsningen
-from spacy.lang.en import English
-nlp=English()
+# from spacy.lang.en import English
+# nlp=English() # dette her er en language class og ikke en language model
 
 
 S1="The brown fox is quick and he is jumping over the lazy dog"
@@ -49,6 +53,13 @@ rp=nltk.RegexpParser(grammar)
 
 shallow_parsed_sent=rp.parse(pos_tagged_sent)
 # print(shallow_parsed_sent)
+
+from spacy import displacy
+displacy.render(nlp(S1),
+                jupyter=True,
+                options={'distance':100,
+                         'arrow_stroke':1.5,
+                         'arrow_width':8})
 
 ######################
 from nltk.parse.stanford import StanfordParser
