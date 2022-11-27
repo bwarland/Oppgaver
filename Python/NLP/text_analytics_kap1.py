@@ -15,7 +15,7 @@ import pandas as pd
 # import spacy.cli
 spacy.cli.download('en_core_web_trf')
 
-nlp=en_core_web_trf.load()
+# nlp=en_core_web_trf.load()
 
 # Denne ser ut til å løse med det problemet at en_core_web_sm ikke laster
 # men jeg husker dessverre ikke hvor jeg fant denne løsningen
