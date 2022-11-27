@@ -1,10 +1,17 @@
 
 import nltk, spacy, numpy as np, pandas as pd
+# import en_core_web_sm
 
+# nlp=en_core_web_sm
 
+# nlp=spacy.load('en_core_web_lg')
+# nlp=spacy.load('en')
 
-nlp=spacy.load('en_core_web_lg')
+# nlp=spacy.load('en_core_web_sm-2.3.1')
+nlp=spacy.load('en_core_web_sm')
+# nlp=spacy.load('pyh9f0ad1d_0')
 
+# spacy-model-en_core_web_sm-2.3.1
 # nlp=spacy.load('en_core_web_sm',parse=True,tag=True,entity=True)
 # conda install conda-forge spacy-model-en_core_web_sm
 
